@@ -1,0 +1,4 @@
+hello,characters
+this is hello
+小哥哥!this is hello
+小哥哥!
