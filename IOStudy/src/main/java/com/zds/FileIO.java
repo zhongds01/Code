@@ -3,7 +3,7 @@ package com.zds;
 import java.io.*;
 
 /**
- * description: 字节流与字符流区别在于字符流需要将缓冲区清楚以后，才能将数据真正的写进文件中。
+ * description: 字节流与字符流区别在于字符流需要将缓冲区清除以后，才能将数据真正的写进文件中。
  * author: ZDS
  * create_date : 2019/8/20
  * create_time : 22:12

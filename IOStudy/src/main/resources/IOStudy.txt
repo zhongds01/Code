@@ -1,0 +1,38 @@
+#输出流
+----OutputStream
+OutputStream(abstract class) implements Closeable, AutoCloseable
+FileOutputStream(Class) extends OutputStream implements Closeable, AutoCloseable,Flushable
+
+----Writer
+Writer(abstract class) implements Closeable, Flushable, Appendable, AutoCloseable
+FileWriter extends OutputStreamWriter(常用写文件输出流，字符流方式)
+OutputStreamWriter extends Writer implements Closeable, Flushable, Appendable, AutoCloseable(转换流，字节流转换到字符流，可以更改编码方式)
+OutputStreamWriter​(OutputStream out)
+----最强使用(并且可以修改编码)
+BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out,"utf-8"));
+
+#输入流
+----InputStream
+InputStream(abstract class)(读取二进制数据，字节流方式)
+FileInputStream extends InputStream
+----Reader
+Reader(abstract class)(读取文本数据，字符流方式)
+FileReader extends InputStreamReader (常用读文件输入流，字符流方式)
+InputStreamReader extends Reader implements Closeable, AutoCloseable, Readable (转换流，字节流转换到字符流，可以更改编码方式)
+InputStreamReader​(InputStream in)
+
+#带缓冲的输入输出流
+BufferedOutputStream   BufferedOutputStream (OutputStream out)(带缓冲区的字节输出流，速度更快，推荐使用)
+BufferedInputStream    BufferedInputStream​(InputStream in)(带缓冲区的字节输入流，速度更快，推荐使用)
+BufferedReader extends Reader    BufferedReader​(Reader in)
+BufferedWriter extends Writer    BufferedWriter​(Writer out)
+----最强使用(并且可以修改编码)
+BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "utf-8"));
+
+#打印流（装饰设计模式）
+PrintWriter extends Writer(常用于字符流，也常用于文件的写操作)
+PrintStream extends FileOutputStream(常用于字节流)
+
+#总结
+输入使用Scanner、BufferReader完成
+输出使用PrintWriter、PrintStream完成
